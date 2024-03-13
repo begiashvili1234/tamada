@@ -1,0 +1,32 @@
+<div class="mt-5" *ngIf="collection">
+  <button 
+  (click)="showModalBtnClick()"
+  class="btn btn-primary">გაგზავნა</button>
+  <hr class="col-md-5" />
+  <table class="table mt-2" id="tableTamada">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">სათაური</th>
+        <th scope="col">ტექსტი</th>
+        <th scope="col">სიმღერის ლინკი</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+        <th scope="row">{{ item.position }}</th>
+        <td>{{ item.title }}</td>
+        <td>{{ item.text }}</td>
+        <td>
+          <a [href]="item.bgMusicLink">მისამართი</a>
+        </td>
+        <td>
+          <button (click)="onDeleteBtnClick(item)" class="btn-danger btn">
+            წაშლა
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

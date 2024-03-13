@@ -1,0 +1,33 @@
+<div class="col-9 m-auto">
+    <h3>დაამატეთ სადღეგრძელო</h3>
+    <hr class="col-md-5">
+    <div class="mt-2">
+        <div class="mb-3">
+            <label for="title" class="form-label">სახელი</label>
+            <input [(ngModel)]="tamadaModelItem.title" type="text" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">ტექსტი</label>
+            <textarea [(ngModel)]="tamadaModelItem.text" type="text" class="form-control" id="description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="bgSongs" class="form-label">სიმღერა</label>
+            <input [(ngModel)]="tamadaModelItem.bgMusicLink" type="text" class="form-control" id="bgSongs">
+        </div>
+        <div class="mb-3">
+            <label for="position" class="form-label">პოზიცია</label>
+            <select [(ngModel)]="tamadaModelItem.position" id="position" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <button 
+            [disabled]="!tamadaModelItem.isValid()"
+            (click)="onFormSubmit()"
+            class="btn btn-success col-12 d-block">დამატება</button>
+        </div>
+    </div>
+</div>

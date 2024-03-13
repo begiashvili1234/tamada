@@ -1,0 +1,10 @@
+<section class="col-10 m-auto mt-5">
+    <article class="col-12">
+        <app-tamada-form (tamadaFormSubmitEvent)="tamadaFormSubmitSubs($event)"></app-tamada-form>
+    </article>
+    <article class="col-md-12">
+        <app-tamada-table 
+        [collection]="collection"
+        (removeItemEvent)="removeItemSubs($event)"></app-tamada-table>
+    </article>
+</section>
